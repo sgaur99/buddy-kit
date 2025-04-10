@@ -1,6 +1,79 @@
 # BuddyKit
 
-BuddyKit is a platform designed to assist users with various aspects of their lives through modular features.
+BuddyKit is a comprehensive platform designed to assist international students in adapting to their new environment. It provides modular features to address academic, social, and logistical challenges, fostering a sense of community and enhancing the overall student experience.
+
+## Features
+
+### Core Modules
+1. **CampusCompass**: Logistics and onboarding support for students.
+2. **CityPulse**: Discover local dining options, discounts, and reviews.
+3. **StudyScope**: Academic resources, course navigation, and planning tools.
+4. **MeetMate**: Community events, networking, and buddy-matching.
+
+## Installation
+
+### Client Setup
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sgaur99/buddy-kit.git
+   cd BuddyKit
+   ```
+
+2. Navigate to the client folder and install dependencies:
+   ```bash
+   cd client
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+### Server Setup
+
+1. Navigate to the server folder:
+   ```bash
+   cd server
+   ```
+
+2. Install server dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the server:
+   ```bash
+   npm start
+   ```
+
+4. The server will run on `http://localhost:5000` by default.
+
+## Project Structure
+
+```
+BuddyKit/
+├── client/
+│   ├── src/
+│   │   ├── components/   # Reusable components (e.g., Navbar, Layout)
+│   │   ├── pages/        # Application pages (e.g., LandingPage, CampusCompass)
+│   │   ├── App.js        # Main application component
+│   │   └── index.js      # Entry point
+│   ├── public/           # Static assets
+│   └── package.json      # Client dependencies
+├── server/
+│   ├── routes/           # API routes
+│   ├── models/           # Database models
+│   ├── server.js         # Main server file
+│   └── package.json      # Server dependencies
+├── .gitignore            # Ignored files and directories
+├── README.md             # Project documentation
+└── refernce-copilot.md   # Internal reference document (ignored in .gitignore)
+```
+## License
+
+This project is licensed under the MIT License. 
 
 ## BuddyKit Web Platform: Project Implementation Report
 
@@ -21,14 +94,6 @@ BuddyKit is an innovative web platform designed to revolutionize the internation
 3. StudyScope: Academic Resource and Course Navigation
 4. MeetMate: Community Events and Networking
 
-#### 2.2 Technical Stack Recommendation
-- Frontend: React.js with Next.js
-- Backend: Node.js with Express.js
-- Database: Firebase Firestore
-- Authentication: Firebase Authentication (Google OAuth)
-- Styling: Tailwind CSS
-- State Management: Redux
-- Deployment: Vercel
 
 ### 3. Detailed Module Breakdown
 #### 3.1 CampusCompass
@@ -79,94 +144,8 @@ BuddyKit is an innovative web platform designed to revolutionize the internation
 - Create secure group invitation systems
 - Implement event recommendation engine
 
-### 4. User Experience Strategy
-#### 4.1 Authentication Flow
-1. Google OAuth integration
-2. University email verification
-3. Role-based access control
-4. Seamless onboarding experience
-
-#### 4.2 Design Principles
-- Mobile-first responsive design
-- Intuitive, card-based interface
-- Light/dark mode support
-- Accessibility considerations
-
-### 5. Data Model and Security
-#### 5.1 Key Data Collections
-- Users
-- Courses
-- Restaurants
-- Events
-- Community Groups
-- Buddy Matching Submissions
-
-#### 5.2 Security Considerations
-- Role-based access control
-- Data anonymization
-- Content moderation system
-- Compliance with student data protection regulations
-
-### 6. Development Roadmap
-**Phase 1: MVP Development (3 months)**
-- Core infrastructure setup
-- CampusCompass and CityPulse modules
-- Basic authentication
-- Initial design implementation
-
-**Phase 2: Expansion (3-6 months)**
-- StudyScope module development
-- Advanced search and filtering
-- Community features
-- Performance optimization
-
-**Phase 3: Community & Scale (6-9 months)**
-- MeetMate full implementation
-- Machine learning recommendation systems
-- Multi-university expansion
-- Enhanced community tools
-
-### 7. Estimated Resources
-**Development Team**
-- 1 Project Manager
-- 2 Full-stack Developers
-- 1 UX/UI Designer
-- 1 DevOps Engineer
-
-**Estimated Budget**
-- Development: $120,000 - $180,000
-- Infrastructure and Hosting: $24,000/year
-- Marketing and Community Acquisition: $50,000
-
-### 8. Risks and Mitigation
-**Potential Challenges**
-- Data accuracy and verification
-- User engagement and retention
-- Technical scalability
-- Continuous content moderation
-
-**Mitigation Strategies**
-- Implement robust verification processes
-- Gamification of user contributions
-- Scalable cloud infrastructure
-- Community guidelines and moderation tools
-
-### 9. Success Metrics
-**Key Performance Indicators (KPIs)**
-- Monthly Active Users (MAU)
-- User Retention Rate
-- Content Submission Volume
-- Community Engagement Score
-- User Satisfaction Surveys
-
-### 10. Conclusion
+### 4. Conclusion
 BuddyKit represents a transformative approach to supporting international students, leveraging technology to create a comprehensive, community-driven platform that addresses critical needs in academic and social integration.
-
-**Next Steps**
-1. Secure initial funding
-2. Assemble development team
-3. Begin MVP development
-4. Conduct initial university partnerships
 
 ---
 
@@ -230,13 +209,6 @@ BuddyKit represents a transformative approach to supporting international studen
 - Firebase Realtime Database (Real-time updates and user interactions)
 - Custom-built matching algorithms with TensorFlow (ML-driven recommendations)
 
-### Technical Integrations Across Modules
-- Frontend: React.js, Next.js, Redux for state management
-- Backend: Node.js, Express.js
-- Database: Firebase Firestore
-- Authentication: Firebase Authentication (Google OAuth)
-- Deployment: Vercel
-- Styling: Tailwind CSS
 
 ---
 
@@ -247,17 +219,3 @@ BuddyKit represents a transformative approach to supporting international studen
 - **Privacy Policies:** Transparent, clear privacy policies detailing data handling practices
 
 ---
-
-### Detailed Explanation of Platform Objectives and Necessity:
-
-**What are we building?**
-BuddyKit, a comprehensive digital platform tailored for international students, addressing their academic, social, and logistical challenges.
-
-**Why are we building it?**
-International students face unique challenges adapting to new academic environments and cultural contexts. BuddyKit aims to simplify this transition, promote community engagement, and enhance academic success through a cohesive, integrated solution.
-
-**How will we build it?**
-By leveraging modern technology stacks and integrating user-friendly features supported by robust APIs and data management systems. The platform will focus on usability, scalability, and secure user data management.
-
-**Legal Considerations:**
-Compliance with international and local data regulations, strong security measures, clear user agreements, and consistent moderation and oversight to ensure ethical management and operational transparency.

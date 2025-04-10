@@ -31,3 +31,6 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Exclude reference README
+refernce-copilot.md
