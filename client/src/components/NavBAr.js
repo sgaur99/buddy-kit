@@ -35,11 +35,21 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        {!isMobile && (
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{ flexGrow: 1, textAlign: "left" }} // Ensure alignment to the left
+        >
+          <Link
+            to="/"
+            style={{
+              color: "white",
+              textDecoration: "none",
+            }}
+          >
             BuddyKit
-          </Typography>
-        )}
+          </Link>
+        </Typography>
         {!isMobile && (
           <div className="hidden md:flex space-x-4">
             {navLinks.map((link) => (
