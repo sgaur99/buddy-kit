@@ -8,10 +8,12 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import Link from "next/link";
+import { Link } from "react-router-dom";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 768px)"); // Detect mobile screen size
 
   const toggleDrawer = (open) => (event) => {
     if (
@@ -33,13 +35,17 @@ const Navbar = () => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          BuddyKit
-        </Typography>
-        <div className="hidden md:flex space-x-4">
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} passHref>
-              <a
+        {!isMobile && (
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            BuddyKit
+          </Typography>
+        )}
+        {!isMobile && (
+          <div className="hidden md:flex space-x-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                to={link.href}
                 style={{
                   color: "white",
                   textDecoration: "none",
@@ -47,30 +53,44 @@ const Navbar = () => {
                 }}
               >
                 {link.label}
-              </a>
-            </Link>
-          ))}
-        </div>
-        <IconButton
-          edge="end"
-          color="inherit"
-          aria-label="menu"
-          className="md:hidden"
-          onClick={toggleDrawer(true)}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
-          <List>
-            {navLinks.map((link) => (
-              <ListItem button key={link.href} onClick={toggleDrawer(false)}>
-                <Link href={link.href} passHref>
-                  <ListItemText primary={link.label} />
-                </Link>
-              </ListItem>
+              </Link>
             ))}
-          </List>
-        </Drawer>
+          </div>
+        )}
+        {isMobile && (
+          <>
+            <IconButton
+              edge="end"
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer
+              anchor="right"
+              open={drawerOpen}
+              onClose={toggleDrawer(false)}
+            >
+              <List>
+                {navLinks.map((link) => (
+                  <ListItem
+                    button
+                    key={link.href}
+                    onClick={toggleDrawer(false)}
+                  >
+                    <Link
+                      to={link.href}
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <ListItemText primary={link.label} />
+                    </Link>
+                  </ListItem>
+                ))}
+              </List>
+            </Drawer>
+          </>
+        )}
       </Toolbar>
     </AppBar>
   );
