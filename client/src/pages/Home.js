@@ -29,61 +29,65 @@ const Home = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container
-        maxWidth="md"
-        sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          minHeight: "100vh", // Ensure the container takes the full height of the viewport
+        }}
       >
         <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <Box
           sx={{
+            flexGrow: 1, // Pushes the footer to the bottom
             display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            flexGrow: 1,
+            justifyContent: "center", // Horizontally center the content
+            alignItems: "center", // Vertically center the content
             textAlign: "center",
           }}
         >
-          <Typography
-            variant="h3"
-            component="h1"
-            fontWeight="bold"
-            gutterBottom
-          >
-            Welcome to BuddyKit
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            Explore student-first tools to thrive in Boston 🚀
-          </Typography>
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={2}
-            sx={{ mt: 4 }}
-          >
-            <Link to="/campuscompass" style={{ textDecoration: "none" }}>
-              <Button variant="outlined" color="primary" sx={{ m: 1 }}>
-                📋 CampusCompass
-              </Button>
-            </Link>
-            <Link to="/citypulse" style={{ textDecoration: "none" }}>
-              <Button variant="outlined" color="primary" sx={{ m: 1 }}>
-                🍜 CityPulse
-              </Button>
-            </Link>
-            <Link to="/studyscope" style={{ textDecoration: "none" }}>
-              <Button variant="outlined" color="primary" sx={{ m: 1 }}>
-                📚 StudyScope
-              </Button>
-            </Link>
-            <Link to="/meetmate" style={{ textDecoration: "none" }}>
-              <Button variant="outlined" color="primary" sx={{ m: 1 }}>
-                👥 MeetMate
-              </Button>
-            </Link>
-          </Stack>
+          <Container maxWidth="md">
+            <Typography
+              variant="h3"
+              component="h1"
+              fontWeight="bold"
+              gutterBottom
+            >
+              Welcome to BuddyKit
+            </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+              Explore student-first tools to thrive in Boston 🚀
+            </Typography>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={2}
+              sx={{ mt: 4 }}
+            >
+              <Link to="/campus-compass" style={{ textDecoration: "none" }}>
+                <Button variant="outlined" color="primary" sx={{ m: 1 }}>
+                  📋 CampusCompass
+                </Button>
+              </Link>
+              <Link to="/city-pulse" style={{ textDecoration: "none" }}>
+                <Button variant="outlined" color="primary" sx={{ m: 1 }}>
+                  🍜 CityPulse
+                </Button>
+              </Link>
+              <Link to="/study-scope" style={{ textDecoration: "none" }}>
+                <Button variant="outlined" color="primary" sx={{ m: 1 }}>
+                  📚 StudyScope
+                </Button>
+              </Link>
+              <Link to="/meet-mate" style={{ textDecoration: "none" }}>
+                <Button variant="outlined" color="primary" sx={{ m: 1 }}>
+                  👥 MeetMate
+                </Button>
+              </Link>
+            </Stack>
+          </Container>
         </Box>
         <Footer />
-      </Container>
+      </Box>
     </ThemeProvider>
   );
 };

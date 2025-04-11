@@ -3,9 +3,9 @@ import Layout from "../../components/Layout";
 
 const StudyScope = () => {
   return (
-    <Layout>
+    <div>
       <div>StudyScope Page</div>
-    </Layout>
+    </div>
   );
 };
 

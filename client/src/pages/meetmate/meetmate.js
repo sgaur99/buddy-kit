@@ -3,9 +3,9 @@ import Layout from "../../components/Layout";
 
 const MeetMate = () => {
   return (
-    <Layout>
+    <div>
       <div>MeetMate Page</div>
-    </Layout>
+    </div>
   );
 };
 

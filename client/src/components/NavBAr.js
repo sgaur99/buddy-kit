@@ -26,10 +26,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { href: "/campuscompass", label: "CampusCompass" },
-    { href: "/citypulse", label: "CityPulse" },
-    { href: "/studyscope", label: "StudyScope" },
-    { href: "/meetmate", label: "MeetMate" },
+    { href: "/campus-compass", label: "CampusCompass" },
+    { href: "/city-pulse", label: "CityPulse" },
+    { href: "/study-scope", label: "StudyScope" },
+    { href: "/meet-mate", label: "MeetMate" },
   ];
 
   return (
